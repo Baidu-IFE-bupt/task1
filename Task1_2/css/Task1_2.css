@@ -107,9 +107,45 @@ article .autor{
 	height: 40px;
 	line-height: 40px;
 }
-
 .aside_content{
-	padding-left: 200px;
+	font-size: 14px;
 }
-.mail_address{
-	display:inline-block;}
+.aside_content .explan{
+	display: inline-block;
+	width: 30%;
+	text-align: right;
+}
+
+.aside_content .hint{
+	margin-left: 30%;
+	padding-left: 6px;
+	color: gray;
+}
+
+.aside_content div{
+	margin-top: 10px;
+}
+.aside_content textarea{
+	width: 60%;
+	height: 100px;
+
+}
+.aside_content .ok{
+	width: 99%;
+	margin: 10px auto;
+	height: 40px;
+	line-height: 40px;
+	background-color: #3355D0;
+	color: #fff;
+	font-weight: bold;
+}
+
+footer{
+	width: 100%;
+	background-color: #000;
+	height: 70px;
+	line-height: 70px;
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+}
