@@ -90,17 +90,20 @@
 
 	}
 	.line1,.line2{
-		font-size: 24px;
 		color: #000000;
 		font-family: "Microsoft YaHei";
 		display: block;
 		line-height: 40px;
+	}
+	.line1 .cap,.line2 .cap{
+		font-size: 24px;
 	}
 	.line3{
 		font-size: 12px;
 		color: #676767;
 		font-family: "KaiTi";
 		line-height: 10px;
+		margin:0px;
 	}
 	.line4{
 		font-size: 116px;
@@ -116,25 +119,52 @@
 	}
 	.line5 p{
 		margin: 0;
-		
+		display: inline-block;
 	}
 
-	.line5 div:nth-child(1){	
+	.line5 p:nth-child(1){	
 		font-size: 55px;
-		position: absolute;
-		left: 0px;
-		
 	}
-	.line5 div:nth-child(2){
-		position: absolute;
-		left: 90px;
-		top: 18px;
-	}
-	.line5 div:nth-child(2) p:nth-child(1){
+	
+	.line5 p:nth-child(2){
 		font-size: 21px;
 	}
-	.line5 div:nth-child(2) p:nth-child(2){
+	.line5 span{
 		font-size: 12px;
+	}
+	.www{
+		display: inline-block;
+		width: 25%;
+		margin:0px 10px;
+		padding: 0px;
+	}
+	.www header{
+		font-size: 16px;
+		font-family: "Microsoft YaHei";
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	.www article{
+		font-size: 12px;
+		color: #767777;
+		font-family: "SimSun";
+		line-height: 16px;
+	}
+	.what{
+		color: #418c59;
+	}
+	.when{
+		color: #d2994f;
+	}
+	.how{
+		color: #cc7680;
+	}
+	.www i{
+		font-size: 12px;
+		color: #cd4a48;
+		font-family: "Microsoft YaHei";
+		line-height: 16px;
+		opacity: 60%;
 	}
 	
 	/**图片部分**/
@@ -162,21 +192,42 @@
 			</div>
 
 			<div class="about">
-				<a href="#" class="line1">ABOUT</a>
-				<a href="#" class="line2">TECHNOLOGE</a>
+				<u class="line1">ABOUT</u>
+				<u class="line2">TECHNOLOGE</u>
 				<p class="line3">About technology about technology about technology</p>
 				<i class="line4">700</i>
 				<div class="line5">
-					<div>
-						<p>3.2</p>
-					</div>
-					<div>
-						<p>css</p>
-						<p>cssssccsccscssc</p>
-					</div>
-					
-
+					<p>3.2</p>
+					<p>css<br><span>ccccccscssc</span></p>
+						
 				</div>
+			</div>
+		</div>
+
+		<div class="part2">
+			<div class="www">
+				<header class="what">What</header>
+				<article>前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端</article>
+			</div>
+			
+			<div class="www">
+				<header class="when">When</header>
+				<article>前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端</article>
+			</div>
+
+			<div class="www">
+				<header class="how">How</header>
+				<article>
+					<p>前端前端前端前端</p>
+					<p>前端前端前端前端前端前端</p>
+					<p>前端前端前端前端</p>
+
+					<p>What------<i>40%</i></p>
+
+					<p>What------<i>30%</i></p>
+
+					<p>What------<i>40%</i></p>
+				</article>
 			</div>
 		</div>
 	</div>
