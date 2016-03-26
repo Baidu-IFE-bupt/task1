@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Task1_7</title>
+<style type="text/css">
+	body{
+		padding: 0px;
+		margin: 0px;
+		background-color: #ffffff;
+		min-width: 1281px;
+	}
+	nav{
+		width: 100%;
+		height: 60px;
+	}
+
+	.logo{
+		margin-left: 60px;
+		padding-left: 40px;
+		background-image: url(images/logo.png);
+		background-repeat: no-repeat;
+		line-height: 60px;
+		background-position:left center;
+		font-size: 20px;
+		font-weight: bold;
+		float: left;
+	}
+
+	nav ul{
+		font-size: 14px;
+		float: right;
+		margin-right: 60px;
+		font-family: "SimHei";
+		margin-bottom: 0px;
+	}
+	nav ul li{
+		display: inline-block;
+		margin-right: 40px;
+
+	}
+	nav ul li.active{
+		color: #E58076;
+	}
+	nav ul li.active::after{
+		content: "";
+		display: block;
+		width: 180%;
+		height: 2px;
+		background-color: #E58076;
+		margin-top: 20px;
+		margin-left: -40%;
+	}
+
+	/**图片**/
+	.img_wrap{
+		width: 100%;
+		position: relative;
+	}
+	.img_wrap img.show{
+		width: 100%;
+	}
+	.img_wrap .mask{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+	.img_wrap .text_wrap{
+		height: 270px;
+		width: 480px;
+		position: absolute;
+		left: 20%;
+		top: 50%;
+		margin-top: -135px;
+	}
+	.text_wrap p{
+		color: #ffffff;
+	}
+	.text_wrap p:nth-child(1){
+		font-size: 56px;
+		font-weight: bolder;
+		margin:10px 0;
+	}
+	.text_wrap p:nth-child(2){
+		font-size: 24px;
+		font-weight: bold;
+		line-height: 40px;
+	}
+	.text_wrap .start{
+		width: 80%;
+		height: 66px;
+		margin: 0px;
+		background-color: #E8504F;
+		text-align: center;
+	}
+	.text_wrap .start p{
+		line-height: 66px;
+		font-size: 32px;
+		font-weight: bold;
+	}
+
+	/**图标**/
+
+	.icons{
+		width: 100%;
+		height: 250px;
+	}
+	.icons ul{
+		float: left;
+		width: 100%;
+		height: 184px;
+		margin: 33px 0;
+		padding: 0px;
+		text-align: center;
+
+	}
+	.icons ul li{
+		display: inline-block;
+		width: 24%;
+		text-decoration: none;	
+
+	}
+	.icons ul li div{
+		width: 60%;
+		padding: 0 20px;
+		margin: 40px auto;
+		border-right: 2px solid #767777;
+	}
+	.icons ul li div p{
+		font-size: 16px;
+		color: #767777;
+		font-family: "SimHei";
+		line-height: 30px;
+	}
+
+	/**slogan**/
+	.slogan{
+		width: 100%;
+		height:283px;
+		background-color: #EDEDEC;
+		padding-top: 88px;
+	}
+	.s_img{
+		width: 91px;
+		height: 92px;
+		margin: 0 auto;
+		margin-bottom: 50px;
+	}
+	.s_text{
+		color: #A1A1A1;
+		font-size: 50px;
+		font-weight: bold;
+		text-align: center;
+	}
+	.s_text p{
+		margin: 0px;
+	}
+	.map{
+		width: 100%;
+		position: relative;
+	}
+	.map img{
+		width: 100%;
+	}
+	.map .map_mask{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+	.map .map_text{
+		position: absolute;
+		top: 20px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		margin: 0 auto;
+		text-align: center;
+		color: #ffffff;
+	}
+	.map_text p:nth-child(1){
+		font-size: 24px;
+	}
+	.map_text p:nth-child(1)::after{
+		content: "";
+		width: 30px;
+		height: 2px;
+		display: block;
+		background-color: #fff;
+		position: absolute;
+		left: 50%;
+		margin-left: -15px;
+		margin-top: 6px;
+	}
+	.map_text p:nth-child(2){
+		font-size: 12px;
+	}
+
+	.dropdown_list{
+		width: 80%;
+		position: absolute;
+		top:160px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		margin: 0 auto
+	}
+	.dropdown_list ul li.item{
+		list-style-type: none;
+		width: 24%;
+		display: inline-block;
+
+		position: relative;
+	}
+	.search{
+		width: 80%;
+		height: 40px;
+		background-color: #be4e48;
+		border: none;
+		color: #ffffff;
+		text-align: center;
+		font-size: 20px;
+		line-height: 40px;
+	}
+	input.dropdown{
+		width: 80%;
+		padding-left: 10px;
+		background-image: url(images/dropdown.png);
+		background-position: 95%;
+		background-repeat: no-repeat;
+		margin: 0 auto;
+		background-color: #ffffff;
+		height: 36px;
+		line-height: 36px;
+	}
+	input.active{
+		border-color: #be4e48;
+	}
+	ul.cities li{
+		display: block;
+	}
+	.city_panel{
+		background-color: #E3E3E5;
+		width: 80%;
+		padding-right: 10px;
+		list-style-type: none;
+		position: absolute;
+		left: 2px;
+		top: 42px;
+	}
+	.city_panel ul{
+		padding: 0px;
+	}
+	.city_panel li{
+		width: 100%;
+		font-size: 12px;
+		line-height: 22px;
+		color: #A9A9A9;
+		padding-left: 12px;
+	}
+	.city_panel li.active{
+		background-color: #E74F4D;
+		color: #fff;
+	}
+	.city_panel .before{
+		display: inline-block;
+		width: 12px;
+		height: 18px;
+	}
+
+	/**活动介绍**/
+	.activies{
+		width: 100%;
+		height: 608px;
+		background-color: #F7F7F7;
+	}
+
+	.a_wrap{
+		width: 80%;
+		margin: 0 auto;
+		padding-top: 100px;
+	}
+	.a_wrap li{
+		width: 24%;
+		display: inline-block;
+		list-style-type: none;
+		text-align: center;
+	}
+	.a_img_wrap{
+		display: inline-block;
+		border:1px solid #d9d5d4;
+		padding: 4px;
+	}
+	.title_wrap p{
+		margin: 8px 0px;
+	}
+	.title1{
+		font-size: 10px;
+		font-weight: bold;
+	}
+	.title2{
+		font-size: 8px;
+		color: #968e8a;
+	}
+	.big_title{
+		font-size: 28px;
+		font-weight: bold;
+	}
+
+	/**新世界**/
+	.world{
+		width: 100%;
+	}
+	.w_img_wrap,.w_text_wrap{
+		display: inline-block;
+	}
+	.w_img_wrap{
+		width: 60%;
+		float: left;
+		position: relative;
+	}
+	.triangle{
+	    width: 0;
+	    height: 0;
+	    border-top: 20px solid transparent;
+	    border-right: 40px solid #fff;
+	    border-bottom: 20px solid transparent;
+	}
+	.w_img_wrap .triangle{
+		position: absolute;
+		right: 0px;
+		top: 50%;
+		margin-top: -20px;
+	}
+
+	.w_img_wrap img{
+		width: 100%;
+	}
+	
+	.w_text_wrap{
+		width: 40%;
+		text-align: center;
+		height: 100%;
+		float: left;
+		position: relative;
+	}
+	.w_text{
+		width: 100%;
+		height: 250px;
+		position: absolute;
+		margin-top: 50%;
+		top: -125px;
+	}
+	
+	.more{
+		width: 106px;
+		height: 32px;
+		border: 1px solid #E8504F;
+		line-height: 32px;
+		color: #E8504F;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.w_num{
+		color: #E8504F;
+	}
+	.circle_list{
+		padding: 10px;
+	}
+	.circle{
+		width: 10px;
+		height: 10px;
+		border: 1px solid #8C8C8C;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	.current{
+		background-color: #8C8C8C;
+	}
+	/**查看更多**/
+	.seemore_wrap{
+		width: 100%;
+		clear: both;
+		
+	}
+	.seemore{
+		
+		height: 522px;
+		clear: both;
+	}
+	.seemore1{
+		background-color: #E8504D;
+		color: #fff;
+		font-size: 20px;
+		line-height: 32px;
+		position: relative;
+		
+	}
+	.see_text{
+		width: 206px;
+		height: 156px;
+		position: absolute;
+		margin: 0 auto;
+		margin-top: -78px;
+	}
+	.seemore1 .more1{
+		color: #fff;
+		border-color: #fff;
+		font-size: 20px;
+	}
+</style>
+</head>
+<body>
+
+	<nav>
+		<div class="logo">
+			新世界
+		</div>
+		<ul>
+			<li class="active">首页</li>
+			<li>最新活动</li>
+			<li>项目介绍</li>
+			<li>爱心社区</li>
+			<li>关于我们</li>
+			<li><img src="images/user.png">登录</li>
+		</ul>
+	</nav>
+
+	<section class="img_wrap">
+		<img class="show" src="images/img1.png">
+		<img class="mask show" src="images/mask.png">
+		<section class="text_wrap">
+			<p>Time of new life</p>
+			<p>新时代，年轻的人们让我们一起<br>体验新生活，享受新生活</p>
+			<div class="start">
+				<p>开始体验</p>
+			</div>
+				
+		</section>
+		
+	</section>
+
+	<section class="icons">
+		<ul>
+			<li>
+				<img src="images/circle.png">
+				<div>
+					<p>打造全新世界观，让你更爱你的生活</p>
+				</div>	
+			</li>
+			<li>
+				<img src="images/flag.png">
+				<div>
+					<p>丰富多彩的公益生活，发挥新世界的主人公意识</p>
+				</div>	
+			</li>
+			<li>
+				<img src="images/flower.png">
+				<div>
+					<p>时尚的新理念，超前体验未知的生活</p>
+				</div>	
+			</li>
+			<li>
+				<img src="images/rect.png">
+				<div>
+					<p>完善的培养机制，培养全新的世界观</p>
+				</div>	
+			</li>
+		</ul>
+	</section>
+
+
+	<section class="slogan">
+		<div class="s_img">
+			<img src="images/slogan.png">
+		</div>
+		<div class="s_text">
+			<p>关于新世界，你不知道的还有什么？</p>
+		</div>
+		
+	</section>
+
+	<section class="map">
+		<img src="images/map.png">
+		<img class="map_mask" src="images/map_mask.png">
+		<section class="map_text">
+			<p>查找新世界城市活动信息</p>
+			<p>每个城市的有把不同的活动信息，请自主查询您所需要了解的城市</p>
+		</section>
+
+		<section class="dropdown_list">
+			<ul>
+				<li class="item">
+					<input class="dropdown" name="country" placeholder="国家">
+				</li>
+				<li  class="item">
+					<input class="dropdown active" name="province" placeholder="省份">
+					<div class="city_panel">
+						<ul class="cities">
+							<li class="active"><span class="before">√</span>北京市</li>
+							<li><span class="before"></span>天津市</li>
+							<li><span class="before"></span>河北省</li>
+							<li><span class="before"></span>陕西省</li>
+							<li><span class="before"></span>内蒙古自治区</li>
+							<li><span class="before"></span>辽宁省</li>
+						</ul>
+					</div>
+				</li>
+				<li  class="item">
+					<input class="dropdown" name="city" placeholder="城市">
+				</li>
+				<li  class="item">
+					<button class="search">搜&nbsp;&nbsp;索</button>
+				</li>
+				
+			</ul>
+		</section>
+
+		
+	</section>
+
+	<section class="activies">
+		<div class="a_wrap">
+			<ul>
+				<li>
+					<div class="a_img_wrap">
+						<img src="images/a_img1.jpg">
+					</div>
+					<div class="title_wrap">
+						<p class="title1">北京活动</p>
+						<p class="title2">新社区大联盟</p>
+					</div>
+				</li>
+
+				<li>
+					<div class="title_wrap">
+						<p class="big_title">上&nbsp;海&nbsp;活&nbsp;动</p>
+						<p class="title2">新社区大联盟</p>
+					</div>
+					<div class="a_img_wrap">
+						<img src="images/a_img2.jpg">
+					</div>
+					
+				</li>
+				<li>
+					<div class="a_img_wrap">
+						<img src="images/a_img3.jpg">
+					</div>
+					<div class="title_wrap">
+						<p class="title1">北京活动</p>
+						<p class="title2">新社区大联盟</p>
+					</div>
+				</li>
+				<li>
+					<div class="a_img_wrap">
+						<img src="images/a_img4.jpg">
+					</div>
+					<div class="title_wrap">
+						<p class="title1">北京活动</p>
+						<p class="title2">新社区大联盟</p>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+	</section>
+
+	<section class="world">
+		<div class="w_img_wrap">
+			<img src="images/world.jpg">
+			<div class="triangle"></div>
+		</div>
+			
+		<div class="w_text_wrap">
+			<div class="w_text">
+				<h2>新世界/<span class="w_num">01</span></h2>
+				<p>新世界是个新世界新世界是个新世界新世界是个新世界</p>
+				<p>新世界是个新世界新世界是个新世界新世界是个新世界</p>
+				<p>新世界是个新世界新世界是个新世界新世界是个新世界</p>
+				<p>新世界是个新世界新世界是个新世界</p>
+				<div class="more">
+					更多详情
+				</div>
+				<div class="circle_list">
+					<div class="circle current"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</section>
+	
+	<section class="seemore_wrap">
+		<div class="seemore seemore1">
+			<div class="see_text">
+				<p>新时代<br>关于爱生活的我们</p>
+				<div class="more more1">查看更多</div>
+			</div>
+			
+		</div>
+	</section>
+
+</body>
+</html>
