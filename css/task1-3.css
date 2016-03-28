@@ -1,0 +1,46 @@
+/*task1-3*/
+body{padding:20px;margin:0px;}
+
+/*common*/
+.br-grey{border:1px solid #999;}
+.pd-20{padding:20px;}
+.bg-grey{background:#eee;}
+
+/*container*/
+.sidebar-left{float:left;
+			  width:200px;
+			  box-sizing:border-box;
+			  -moz-box-sizing:border-box; /* Firefox */
+              -webkit-box-sizing:border-box; /* Safari */
+              background: #fff;
+}
+
+.sidebar-right{float:right;
+			  width:120px;
+			  box-sizing:border-box;
+			  -moz-box-sizing:border-box; /* Firefox */
+              -webkit-box-sizing:border-box; /* Safari */
+              background: #fff;
+              padding:20px 20px 0px 20px;
+}
+
+.content{margin-left:220px;
+		margin-right:140px;
+		background: #fff;
+
+}
+
+.team-logo{width:80px;
+		   height:80px;
+		   float:left;
+		   margin-right: 20px;
+}
+#teamMember-logo img{width:80px;
+		   			height:80px;
+					margin-bottom:20px;
+		   		}
+
+.team-name{-webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;}
+
+.bottom{clear:both;}

@@ -1,0 +1,31 @@
+html,body{
+    height: 100%;
+}
+.container{
+    height: 100%;
+}
+.ver_ele{
+    background: #ccc;
+    height: 200px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    left: 50%;
+    margin-left: -200px;
+}
+div[class^=circle]{
+    width: 0px;height: 0px;border-radius: 50px;border:50px solid transparent;border-top-color:#fc0;
+    position: absolute;
+
+}
+.circle_top{
+    top: -50px;
+    left: -50px;
+    transform: rotate(135deg);
+}
+.circle_bot{
+    right: -50px;
+    bottom: -50px;
+    transform: rotate(-45deg);
+}
