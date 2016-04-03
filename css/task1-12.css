@@ -1,0 +1,94 @@
+
+section{margin-bottom:50px;}
+ul{list-style-type:none;}
+a{text-decoration: none;}
+/*表格*/
+table tr td{font-family: 黑体;}
+thead{background: #000;
+	color:#fff;
+}
+tbody tr:nth-child(2),tbody tr:nth-child(4),tbody tr:nth-child(6),tbody tr:nth-child(8),tbody tr:nth-child(10)
+{
+	background: #C3BFBF;
+}
+
+tbody tr:nth-child(1),tbody tr:nth-child(2),tbody tr:nth-child(3){color:red;}
+
+/*input框*/
+.second-project input:focus{width:400px;}
+.second-project input{
+width:200px;
+padding:5px 10px;
+transition: width 1s linear 0s;
+/* Firefox 4 */
+-moz-transition:width 1s linear 0s;
+/* Safari and Chrome */
+-webkit-transition:width 1s linear 0s;
+/* Opera */
+-o-transition:width 1s linear 0s;}
+
+/*banner*/
+.banner{
+    position: relative;
+    width: 400px;
+    height:250px;
+    overflow: hidden;
+}
+
+.banner-img{
+    width: 300%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    transition: 0.5s left;
+    font-size: 0;
+    word-spacing: 0;
+    letter-spacing: 0;
+}
+.banner-img .item1,.item2,.item3{
+    display: inline-block;
+    list-style: none;
+    width: 400px;
+    height:250px;
+}
+.item1{
+    background-color: red;
+}
+.item2{
+    background-color: blue;
+}
+.item3{
+    background-color: green;
+}
+
+.banner-controller{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+.banner-controller a{
+    text-decoration: none;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    background-color: #fff;
+    opacity: 0.5;
+    text-align: center;
+    color: #323030;
+}
+.banner-controller a:visited{
+    
+}
+
+#img1:target~.banner-img{
+    left: 0
+}
+#img2:target~.banner-img{
+    left: -100%;
+}
+#img3:target~.banner-img{
+    left: -200%;
+}
